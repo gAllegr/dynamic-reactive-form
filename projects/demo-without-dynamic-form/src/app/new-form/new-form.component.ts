@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, UntypedFormGroup } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
+import { FormLeftRepresentation, FormRightRepresentation } from '../form.definition';
 
 @Component({
   selector: 'app-new-form',
@@ -7,14 +8,14 @@ import { FormControl, UntypedFormGroup } from '@angular/forms';
   styleUrls: ['./new-form.component.scss']
 })
 export class NewFormComponent implements OnInit {
-  formLeft = new UntypedFormGroup({
+  formLeft = new FormGroup<FormLeftRepresentation>({
     firstName: new FormControl<string | null>(''),
     lastName: new FormControl<string | null>(''),
     faveFood: new FormControl<string | null>(''),
     faveColor: new FormControl<string | null>('')
   });
 
-  formRight = new UntypedFormGroup({
+  formRight = new FormGroup<FormRightRepresentation>({
     phone: new FormControl<string | null>(''),
     email: new FormControl<string | null>(''),
     faveSeason: new FormControl<string | null>(''),
