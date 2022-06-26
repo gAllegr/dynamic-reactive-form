@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
+import { FormControl, UntypedFormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-new-form',
@@ -8,17 +8,17 @@ import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 })
 export class NewFormComponent implements OnInit {
   formLeft = new UntypedFormGroup({
-    firstName: new UntypedFormControl(''),
-    lastName: new UntypedFormControl(''),
-    faveFood: new UntypedFormControl(''),
-    faveColor: new UntypedFormControl('')
+    firstName: new FormControl<string | null>(''),
+    lastName: new FormControl<string | null>(''),
+    faveFood: new FormControl<string | null>(''),
+    faveColor: new FormControl<string | null>('')
   });
 
   formRight = new UntypedFormGroup({
-    phone: new UntypedFormControl(''),
-    email: new UntypedFormControl(''),
-    faveSeason: new UntypedFormControl(''),
-    faveMusic: new UntypedFormControl('')
+    phone: new FormControl<string | null>(''),
+    email: new FormControl<string | null>(''),
+    faveSeason: new FormControl<string | null>(''),
+    faveMusic: new FormControl<string | null>('')
   });
 
   foods = [
