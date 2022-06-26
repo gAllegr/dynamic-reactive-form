@@ -1,4 +1,4 @@
-import { Field, FieldType, KeyValuePair } from '@dynamic-form';
+import { Error, Field, FieldType, KeyValuePair } from '@dynamic-form';
 import { Validators } from '@angular/forms';
 
 export const leftForm: Field[] = [
@@ -83,7 +83,7 @@ export const prefillDataRight: KeyValuePair[] = [
   { key: 'favoriteMusic', value: 'Rock' }
 ];
 
-export const errors = [
+export const errors: Error[] = [
   {
       name: 'required',
       text: 'This field is required.',

@@ -10,7 +10,7 @@ export class EditFormComponent implements OnInit {
   formLeft = new FormGroup({
     firstName: new FormControl('Mickey'),
     lastName: new FormControl('Mouse'),
-    faveFood: new FormControl('Pizza'),
+    faveFood: new FormControl('pizza-1'),
     faveColor: new FormControl('Blue')
   });
 
@@ -21,7 +21,11 @@ export class EditFormComponent implements OnInit {
     faveMusic: new FormControl('Rock')
   });
 
-  foods = ['Pizza', 'Ice Cream', 'Tacos'];
+  foods = [
+    {value: 'icecream-0', viewValue: 'Ice Cream'},
+    {value: 'pizza-1', viewValue: 'Pizza'},
+    {value: 'tacos-2', viewValue: 'Tacos'}
+  ];
   colors = ['Red', 'Blue', 'Yellow'];
   seasons = ['Spring', 'Summer', 'Fall', 'Winter'];
   musics = ['Classical', 'Country', 'Folk', 'Rap', 'Rock'];

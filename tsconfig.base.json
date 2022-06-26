@@ -22,5 +22,8 @@
       ],
       "@dynamic-form": ["projects/dynamic-reactive-form/src"]
     }
+  },
+  "angularCompilerOptions": {
+    "strictTemplates": true
   }
 }

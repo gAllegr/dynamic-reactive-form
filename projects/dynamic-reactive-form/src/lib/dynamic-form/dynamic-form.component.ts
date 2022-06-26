@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
-import { Field, KeyValuePair, Error } from '@dynamic-form';
+import { Field, KeyValuePair, Error, FieldType } from '@dynamic-form';
 
 @Component({
   selector: 'lib-dynamic-form',
@@ -93,7 +93,7 @@ export class DynamicFormComponent implements OnInit {
     this.formReady = true;
   }
 
-  initializeFormControl(field): FormControl {
+  initializeFormControl(field: Field): FormControl {
     let value;
 
     /**
@@ -107,7 +107,7 @@ export class DynamicFormComponent implements OnInit {
      * Default Slide Toggles to true unless otherwise specified,
      * push specific false toggles to falseToggles array
      */
-    if (field.type === 5) {
+    if (field.type === FieldType.SLIDETOGGLE) {
 
       if (typeof value === 'undefined') {
         value = true;
@@ -176,20 +176,21 @@ export class DynamicFormComponent implements OnInit {
     });
   }
 
-  extractFormValues(form): KeyValuePair[] {
-    /**
-     * Extract Form Field Names and Values into an array of key value pairs
-     */
-    const formValues = [];
-    if (form.controls) {
-      Object.keys(form.controls).forEach(key => {
-        if (form.controls[key].controls) {
-          formValues.push({ key, value: this.extractFormValues(form.controls[key])});
-        } else {
-          formValues.push({ key, value: form.get(key).value });
-        }
-      });
-    }
-    return formValues;
-  }
+  // THIS METHOD HAS BEEN COMMENTED BECAUSE IT IS NOT USED
+  // extractFormValues(form): KeyValuePair[] {
+  //   /**
+  //    * Extract Form Field Names and Values into an array of key value pairs
+  //    */
+  //   const formValues = [];
+  //   if (form.controls) {
+  //     Object.keys(form.controls).forEach(key => {
+  //       if (form.controls[key].controls) {
+  //         formValues.push({ key, value: this.extractFormValues(form.controls[key])});
+  //       } else {
+  //         formValues.push({ key, value: form.get(key).value });
+  //       }
+  //     });
+  //   }
+  //   return formValues;
+  // }
 }

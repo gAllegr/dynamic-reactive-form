@@ -25,8 +25,8 @@
         <mat-form-field>
           <mat-label>Favorite Food</mat-label>
           <mat-select matInput formControlName="faveFood">
-            <mat-option *ngFor="let food of foods, let i = index" [value]="foods[i]">
-              {{food}}
+            <mat-option *ngFor="let food of foods, let i = index" [value]="food.value">
+              {{food.viewValue}}
             </mat-option>
           </mat-select>
         </mat-form-field>
