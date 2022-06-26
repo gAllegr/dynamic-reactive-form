@@ -257,5 +257,6 @@
         }
       }
     }
-  }
+  },
+  "defaultProject": "demo-without-dynamic-form"
 }
