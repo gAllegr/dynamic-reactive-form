@@ -9,17 +9,17 @@ import { FormLeftRepresentation, FormRightRepresentation } from '../form.definit
 })
 export class NewFormComponent implements OnInit {
   formLeft = new FormGroup<FormLeftRepresentation>({
-    firstName: new FormControl<string | null>(''),
-    lastName: new FormControl<string | null>(''),
-    faveFood: new FormControl<string | null>(''),
-    faveColor: new FormControl<string | null>('')
+    firstName: new FormControl(''),
+    lastName: new FormControl(''),
+    faveFood: new FormControl(''),
+    faveColor: new FormControl('')
   });
 
   formRight = new FormGroup<FormRightRepresentation>({
-    phone: new FormControl<string | null>(''),
-    email: new FormControl<string | null>(''),
-    faveSeason: new FormControl<string | null>(''),
-    faveMusic: new FormControl<string | null>('')
+    phone: new FormControl(''),
+    email: new FormControl(''),
+    faveSeason: new FormControl(''),
+    faveMusic: new FormControl('')
   });
 
   foods = [
